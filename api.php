@@ -49,8 +49,6 @@
   }
   
   /* If all ok, create db connection */
-  $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
-
   if ($_SERVER['SERVER_NAME'] == "stark-dusk-78333.herokuapp.com") {
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $host = $url["host"];
@@ -63,7 +61,7 @@
     $username = 'root';
     $password = 'root';
   }
-  $mysqli = new mysqli($server, $username, $password, $db); // Используя mysqli подключаемся к базе данных
+  $mysqli = new mysqli($host, $username, $password, $dbname); // Используя mysqli подключаемся к базе данных
   // Первый аргумент - хост, второй - имя пользователя, третий - пароль, 4 - название базы данных
   if ($mysqli->connect_error) { // Тут мы проверяем если что-то пошло не так
     echo json_encode(['error' => "Cannot connect to database"]); // И выдаем ошибку
