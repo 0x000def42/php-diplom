@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/styles.css">
+    <script defer type="text/javascript" src="/public/scripts.js"></script>
+	</head>
+	<body>
+		<header class="main-header">
+      <nav class="main-header-nav">
+        <ul class="nav-list">
+          <li class="nav-list-item active">
+            <a class="nav-list-item-link" href="#main">
+              Главная
+            </a>
+          </li>
+          <li class="nav-list-item ">
+            <a class="nav-list-item-link" href="#topics">
+              Наши услуги
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-item-link" href="#about">
+              О нас
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-item-link" href="#clients">
+              Отзывы
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-list-item-link" href="#footer">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="header-section">
+        <div class="header-text">
+          <h1 class="header-title">
+            Ростовская Юридическая Компания
+          </h1>
+          <p class="header-subtitle">
+            Профессиональная юридическая 
+            консультация в Ростове-на-Дону
+          </p>
+          <a class="header-button" href="#form">
+            Получить консультацию
+          </a>
+        </div>
+      </section>
+    </header>
+    <main id="main" class="main">
+      <article id="topics" class="topics">
+        <header class="topics-header">
+          <h2 class="topics-header-title">
+            Мы эксперты во всех юридических вопросах 
+            и поможем решить любую проблему
+          </h2>
+          <p class="topics-header-description"> 
+            Мы провели более 40 000 консультаций.
+            Учавствовали более чем в 5 000 
+            процессах. В нашей команде есть
+            ускопрофильные специалисты по Всем
+            отраслям права.
+          </p>
+        </header>
+        <main class="topics-main">
+          <section class="topics-section">
+            <div class="topics-image">
+              <img 
+                alt="Жилищные споры" 
+                src="/public/home.png"
+              />
+            </div>
+            <main class="topics-section-main">
+              <h3 class="topics-section-title">
+                Жилищные споры
+              </h3>
+              <p class="topics-section-description">
+                Жилищные споры чаще всего
+                очень сложны, в них учавствуют
+                несколько сторон, каждая из
+                которых рьяно отстаивает свои
+                интересы
+              </p>
+            </main>
+          </section>
+          <section class="topics-section">
+            <div class="topics-image">
+              <img 
+                alt="Услуги автоюриста" 
+                src="/public/car.png"
+              />
+            </div>
+            <main class="topics-section-main">
+              <h3 class="topics-section-title">
+                Услуги автоюриста
+              </h3>
+              <p class="topics-section-description">
+                Поможем Вам решить любые
+                вопросы, которые могут возникнуть
+                на дороге - от общения с 
+                сотрудниками ГИБДД до
+                представления ваших интересов в
+                суде
+              </p>
+            </main>
+          </section>
+          <section class="topics-section">
+            <div class="topics-image">
+              <img   
+                alt="Наследственные споры" 
+                src="/public/policy.png"
+              />
+            </div>
+            <main class="topics-section-main">
+              <h3 class="topics-section-title">
+                Наследственные споры
+              </h3>
+              <p class="topics-section-description">
+                Оформление наследования
+                по завещанию либо законодательно,
+                если завещание отсутствует.
+                Комплексная поддержка в наследственном
+                споре.
+              </p>
+            </main>
+          </section>
+        </main>
+        <footer class="topics-footer">
+          <a class="topics-footer-button" href="#form">
+            Получить консультацию
+          </a>
+        </footer>
+      </article>
+      <template id="feedback-form-template">
+        <article class="form">
+          <section class="form-text">
+            <h2 class="form-title">
+              Оставьте отзыв
+            </h2>
+            <p class="form-description">
+              Ваш отзыв отобразится на сайте сразу после публикации. 
+              Вы можете оставить только 1 отзыв за каждую консультацию
+            </p>
+          </section>
+          
+          <form id="feedback-form" class="form-main">
+            <fieldset class="form-fieldset">
+              <div class="form-control-group">
+                <label class="form-label" for="message">Сообщение</label>
+                <textarea rows="5" class="form-input" name="message"></textarea>
+              </div>
+              <input class="form-button" value="Оставить отзыв" type="submit"/>
+            </fieldset>
+          </form>
+        </article>
+      </template>
+      <article id="about" class="about">
+        <main class="about-main">
+          <section class="about-section">
+            <h2 class="about-section-title">
+              О нас, информация о компании
+            </h2>
+            <p class="about-section-description">
+              Мы предлагаем корпоративным 
+              клиентам и частным лицам 
+              широкий спектр услуг в области 
+              правового и финансового 
+              консалтинга: юридические услуги, 
+              бухгалтерские услуги, регистрация 
+              фирм, регистрация оффшоров, а также 
+              услуги в сфере международного 
+              налогового планирования.
+            </p>
+          </section>
+          <img 
+            class="about-aside-image" 
+            alt="Профессионалов" 
+            src="/public/lawyer.jpg"
+          />
+        </main>
+        <footer class="about-footer">
+          <section class="about-footer-section">
+            <div class="about-footer-section-top-part">
+              <img 
+                class="about-footer-image" 
+                alt="Профессионалов" 
+                src="/public/people.png"
+              />
+              <span class="about-footer-span-count">
+                125
+              </span>
+            </div>
+            <span class="about-footer-span-desc">
+              Профессионалов
+            </span>
+          </section>
+          <section class="about-footer-section">
+            <div class="about-footer-section-top-part">
+              <img 
+                class="about-footer-image" 
+                alt="Консультаций" 
+                src="/public/consultations.png"
+              />
+              <span class="about-footer-span-count">
+                40000
+              </span>
+            </div>
+            <span class="about-footer-span-desc">
+              Консультаций
+            </span>
+          </section>
+          <section class="about-footer-section">
+            <div class="about-footer-section-top-part">
+              <img 
+              class="about-footer-image" 
+                alt="Процессов" 
+                src="/public/process.png"
+              />
+              <span class="about-footer-span-count">
+                5000
+              </span>
+            </div>
+            <span class="about-footer-span-desc">
+              Процессов
+            </span>
+          </section>
+        </footer>
+      </article>
+      <article id="clients" class="clients">
+        <h2 class="clients-title">
+          Наши клиенты о нас
+        </h2>
+        <main class="clients-main">
+          <section class="clients-section">
+            <img 
+              class="clients-image" 
+              alt="Иван" 
+              src="/public/feedback1.jpg"
+            />
+            <span class="clients-name">
+              Иван Иванович И.
+            </span>
+            <p class="clients-message">
+              Спасибо Юрию Марьяновичу. Помог
+              мне разобраться с работодателем.
+              По трудовому дрговору я выполнял все
+              свои обязанности, но требовали
+              исполнять больше ничем не
+              аргументируя, плюс нарушался трудовой
+              режим.
+            </p>
+          </section>
+          <section class="clients-section">
+            <img 
+              class="clients-image"
+              alt="Александра" 
+              src="/public/feedback2.jpg"
+            />
+            <span class="clients-name">
+              Александра Александровна А.
+            </span>
+            <p class="clients-message">
+              Обращалась с разводом (расходились
+              тяжело, много всего делили),
+              детей муж "радостно" оставил мне, а
+              квартиру хотел забрать себе.
+              Договориться не удалось, перешли
+              к суду. Работала с Екатериной
+              Николаевной. Хочу выразить искреннюю
+              благодарность, без вашей не только
+              юридической, но и человеческой
+              поддержки я бы не справилась. Спасибо!
+            </p>
+          </section>
+          <section class="clients-section">
+            <img 
+              class="clients-image"
+              alt="Константин" 
+              src="/public/feedback3.jpg"
+            />
+            <span class="clients-name">
+              Константин Константинович К.
+            </span>
+            <p class="clients-message">
+              Обращался к ним по делу о ДТП. Я был
+              невиновен, застрахован по ОСАГО в 
+              "Росгосстрах". Выплату получил 138000
+              за побитую морду Lexus sc430.
+              Независимая экспертиза насчитала 302000.
+              Разбирательство длилось пол года (с
+              момента обращения к юристу) до получения
+              денег через суд Юрист Иван Алексеевич
+              сам писал все заявления, претензии и прочее.
+            </p>
+          </section>
+        </main>
+      </article>
+      <article class="feedbacks">
+        <main id="feedbacks-container" class="feedbacks-main">
+          <template id="feedback-template">
+            <section class="feedbacks-section">
+              <header class="feedbacks-section-header">
+                <span class="feedbacks-section-name">
+                  # --id-- --name--
+                </span>
+                <span class="feedbacks-section-date">
+                  --date--
+                </span>
+              </header>
+              <main class="feedbacks-section-main">
+                <p class="feedbacks-section-message">
+                  --message--
+                </p>
+              </main>
+            </section>
+          </template>
+        </main>
+        <footer class="feedbacks-footer">
+          <button id="load-button" onclick="loadFeedback()" class="feedbacks-footer-button" >
+            Загрузить ещё
+          </button>
+        </footer>
+      </article>
+      <article class="video">
+        <h2 class="video-title">
+          Видео о нашей работе
+        </h2>
+        <iframe 
+          width="960" 
+          height="515" 
+          src="https://www.youtube.com/embed/occycDAXmAA" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </article>
+      <article class="form">
+        <section class="form-text">
+          <h2 class="form-title">
+            Запишитесь на консультацию
+          </h2>
+          <p class="form-description">
+            Запишитесь на бесплатную первичную 
+            консультацию (45 минут) прямо сейчас!
+          </p>
+          <div class="form-contacts">
+            <span class="form-contacts-part">
+              +7 (111) 222-33-44
+            </span>
+            <span class="form-contacts-part">
+              lawyer@mail.ru
+            </span>
+          </div>
+        </section>
+        <form id="form" class="form-main">
+          <fieldset class="form-fieldset">
+            <div class="form-control-group">
+              <label class="form-label" for="name">Имя</label>
+              <input 
+                placeholder="Введите имя" 
+                class="form-input" 
+                name="name" 
+                type="text"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-control-group">
+              <label class="form-label" for="phone">Телефон</label>
+              <input 
+                class="form-input" 
+                name="phone" 
+                type="text"
+                placeholder="Введите телефон"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-control-group">
+              <label class="form-label" for="email">Email</label>
+              <input 
+                class="form-input" 
+                name="email" 
+                type="text"
+                placeholder="Введите email"
+                autocomplete="off"
+              />
+            </div>
+            <input class="form-button" value="Получить консультацию" type="submit"/>
+          </fieldset>
+        </form>
+      </article>
+    </main>
+    <footer id="footer" class="main-footer">
+      <section class="main-footer-section">
+        <h3 class="main-footer-title">Контатная информация</h3>
+        <ul class="main-footer-list">
+          <li class="main-footer-list-item">
+            test@test.ru
+          </li>
+          <li class="main-footer-list-item">
+            8880000112
+          </li>
+          <li class="main-footer-list-item">
+            Ростов-на-Дону. Тургеневская 9/10
+          </li>
+        </ul>
+      </section>
+      <section class="main-footer-section">
+        <h3 class="main-footer-title">Основные ссылки</h3>
+        <ul class="main-footer-list">
+          <li class="main-footer-list-item">
+            <a href="#main" class="main-footer-list-link">
+              Главная
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="#topics" class="main-footer-list-link">
+              Наши услуги
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="#about" class="main-footer-list-link">
+              О нас
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="#clients" class="main-footer-list-link">
+              Отзывы
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="main-footer-section">
+        <h3 class="main-footer-title">Социальные сети</h3>
+        <ul class="main-footer-list">
+          <li class="main-footer-list-item">
+            <a href="https://vk.com" class="main-footer-list-link">
+              VK.com
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="https://instagram.com" class="main-footer-list-link">
+              Instagram
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="https://facebook.com" class="main-footer-list-link">
+              Facebook
+            </a>
+          </li>
+          <li class="main-footer-list-item">
+            <a href="https://twitter.com" class="main-footer-list-link">
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+	</body>
+</html>

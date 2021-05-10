@@ -1,0 +1,545 @@
+
+/* Нужно очистить дефолтные стили некоторых тегов */
+body, ul, h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Для всех элементов используем шрифт Montserrat, который мы прописали в файле index.hmtl */
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul{
+  list-style-type: none;
+}
+
+/*
+  Тут использовалась картинка на фоне, а так же полупрозрачная затемняющая маска.
+  Что бы это сделать нужно следующее:
+  - Добавить к блоку псевдоэлемент before - это позволяет делать такие финты без усложнения основной разметки
+  - Прописать блоку position: relative - что бы дочерний псевдоэлемент позиционировался не относительно угла страницы, а родительского элемента
+  - Прописать блоку z-index: 1, - что бы отправить содержимое родительского элемента на передний план
+  - Прописать блоку картинку на фоне
+  - Прописать псевдоэлементу content: "" - без этого псевдоэлемент никак не отобразится
+  - Прописать псевдоэлементу z-index: -1 - отправляем псевдоэлемент на задний план, что бы он не перекрывал контентом основной блок
+  - Прописать псевдоэлементу width и height 100% - что бы псевдоэлемент занимал полный размер родительского элемента
+  - Прописать псевдоэлементу position: absolute - что бы отпозиционировать элемент сверху слева угла родительского элемента
+  - Прописать псевдоэлементу top: 0
+  - Прописать псевдоэлементу полупрозрачный фон черного цвета
+*/
+
+.main-header {
+  position: relative;
+  height: 44.2vw; /* Соотношение картинки примерно равно 100 к 44, поэтому мы явно пропишем высоту блока, которая зависит от ширины экрана */
+  z-index: 1;
+  width: 100vw;
+  background-image: url('/public/slider1.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  
+}
+.main-header::before{
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,.3);
+}
+
+.main-header-nav {
+  border-bottom: 1px solid #a1a1a1;
+  height: 100px;
+}
+
+.nav-list{
+  display: flex;
+  height: 100%;
+  float: right;
+  min-width: 54vw; /* Делаем так, чтобы пункты навигации на больших разрешениях начинались с середины страницы */
+}
+
+.nav-list-item{
+  height: 100%;
+  line-height: 100%;
+  padding: 3px 10px;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.nav-list-item-link{
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  margin: auto;
+}
+
+.nav-list-item.active { /* Для элементов навигации можно добавить класс active, что добавляет им выделение снизу */
+  border-bottom: 3px solid white; /* Добавляем белое выделение снизу */
+  top: 2px; /* Смещаем блок на 2px вниз, это компенсирует отступ, появившийся из-за border-bottom*/
+}
+
+.nav-list-item-link:hover{
+  text-decoration: underline;
+}
+
+/**/
+
+.header-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Блок пытается занять все доступное ему пространство */
+}
+
+.header-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-title{
+  color: white;
+  font-size: 16px;
+  line-height: 55px;
+}
+.header-subtitle{
+  color: white;
+  font-size: 48px;
+  font-weight: 800;
+  max-width: 800px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  padding-bottom: 30px;
+}
+.header-button{
+  color: white;
+  background-color: #4985FF;
+  display: block;
+  border-radius: 30px;
+  padding: 10px 70px;
+  font-size: 14px;
+  width: 100px;
+  text-align: center;
+}
+
+/**/
+
+.topics {
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Блок занимает полную ширину экрана */
+  margin: auto;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.topics-header{
+  max-width: 1000px;
+}
+
+.topics-header-title{
+  text-align: center;
+  color: #323232;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 53px;
+  padding-bottom: 30px;
+}
+
+.topics-header-description{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: #999999;
+  max-width: 730px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+
+.topics-main{
+  display: flex;
+  max-width: 1250px;
+}
+
+.topics-section{
+  padding: 0 10px;
+  display: flex;
+}
+
+/* Делаем круглы бордер для тега-обертки картинки, а так же потом синий бордер для самой картинки */
+.topics-image{
+  width: 86px;
+  height: 86px;
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px solid #D1D1D1;
+}
+
+.topics-image > img {
+  width: 100%;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #4985FF;
+}
+
+.topics-section-main{
+  flex: 1;
+  padding-left: 15px;
+}
+
+.topics-section-title{
+  padding-top: 55px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.topics-section-description{
+  padding-top: 15px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #999999;
+}
+
+.topics-footer{
+  padding-top: 40px;
+}
+
+.topics-footer-button{
+  color: white;
+  background-color: #4985FF;
+  display: block;
+  border-radius: 30px;
+  padding: 10px 70px;
+  font-size: 14px;
+  width: 100px;
+  text-align: center;
+}
+
+/**/
+
+.about{
+  background-color: #f0f0f0;
+  width: 100vw;
+}
+
+.about-main{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-section{
+  padding-right: 30px;
+}
+
+.about-section-title{
+  font-weight: bold;
+  padding-bottom: 30px;
+  font-size: 36px;
+  line-height: 53px;
+  color: #323232;
+}
+
+.about-section-description{
+  font-size: 16px;
+  line-height: 25px;
+  color: #999999;
+}
+
+.about-aside-image{
+  width: 510px;
+  border-radius: 42px;
+}
+
+.about-footer{
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  border-top: 2px solid #E0E0E0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-footer-section{
+  padding: 0 60px;
+}
+
+.about-footer-section-top-part{
+  display: flex;
+  align-items: center;
+}
+
+.about-footer-image{
+  height: 38px;
+}
+
+.about-footer-span-count{
+  font-weight: normal;
+  padding-left: 25px;
+  font-size: 36px;
+  line-height: 53px;
+  color: #000000;
+}
+
+.about-footer-span-desc{
+  font-size: 16px;
+  line-height: 25px;
+  color: #999999;
+}
+
+/**/
+
+.clients {
+  padding-top: 80px;
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.clients-title{
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 53px;
+
+  color: #000000;
+}
+
+.clients-main{
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-section{
+  width: 300px;
+}
+
+.clients-image{
+  width: 100%;
+  border-radius: 20px;
+}
+
+.clients-name{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.clients-message{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+/**/
+
+.feedbacks {
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+.feedbacks-section{
+  padding: 10px;
+  margin-bottom: 40px;
+  background-color: #eaeaea;
+}
+
+.feedbacks-section-header{
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedbacks-section-name {
+  font-weight: 600;
+}
+
+.feedbacks-section-date{
+  font-weight: 500;
+}
+
+.feedbacks-footer-button{
+  color: white;
+  float: right;
+  border: 0;
+  cursor: pointer;
+  background-color: #4985FF;
+  display: block;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 16px;
+  width: 280px;
+  text-align: center;
+}
+
+/**/
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.video-title{
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 53px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/**/
+
+.form {
+  position: relative;
+  width: 100vw;
+  height: 34.2vw;
+  z-index: 1;
+  background-image: url('/public/rostov.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form::before{
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,.7);
+}
+
+.form-text {
+  width: 550px;
+  padding-right: 30px;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 36px;
+  padding-bottom: 5px;
+  line-height: 53px;
+  color: #FFFFFF;
+}
+
+.form-description {
+  font-weight: 300;
+  font-size: 18px;
+  width: 530px;
+  padding-bottom: 50px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+.form-contacts-part{
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 29px;
+  color: #FFFFFF;
+  padding-right: 20px;
+}
+
+.form-fieldset {
+  border: 0;
+  background: 0;
+}
+
+.form-label {
+  font-size: 20px;
+  line-height: 22px;
+  color: #FFFFFF;
+  display: block;
+}
+
+.form-input {
+  border: 0;
+  width: 400px;
+  color: white;
+  background: 0;
+  padding: 15px 15px 15px 0px;
+  font-size: 20px;
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 30px;
+}
+
+.form-button {
+  background: #4985FF;
+  border-radius: 30px;
+  border: 0;
+  color: #fff;
+  padding: 20px 30px;
+  float: right;
+  cursor: pointer;
+}
+
+/**/
+
+.main-footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer-section{
+  padding: 0 40px;
+}
+
+.main-footer-title{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.main-footer-list-item{
+  padding-top: 20px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #999999;
+}
+
+.main-footer-list-link{
+  font-size: 14px;
+  line-height: 22px;
+  color: #999999;
+}
+
+.main-footer-list-link:hover{
+  text-decoration: underline;
+}
