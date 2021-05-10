@@ -51,7 +51,7 @@
   /* If all ok, create db connection */
   $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-  if ($_SERVER['SERVER_NAME'] == "thawing-island-242342379.herokuapp.com") {
+  if ($_SERVER['SERVER_NAME'] == "stark-dusk-78333.herokuapp.com") {
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $host = $url["host"];
     $username = $url["user"];
